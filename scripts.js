@@ -1,12 +1,12 @@
 function addToContacts() {
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Your Name
-ORG:Company Name
-TITLE:Job Title
-EMAIL:your.email@example.com
-TEL;TYPE=WORK,VOICE:1234567890
-URL:https://www.example.com
+FN:Sela HIN Mr.
+ORG:General Department of Taxation
+TITLE:Network Engineer
+EMAIL:hinsela@tax.gov.kh
+TEL;TYPE=Cellcard,VOICE:+85512716369
+URL:https://www.tax.gov.kh/en
 END:VCARD`;
 
     const blob = new Blob([vCardData], { type: 'text/vcard' });

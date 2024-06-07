@@ -62,33 +62,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Code for adding floating background icons
     const backgroundContainer = document.querySelector('.background-icons');
-    const iconPaths = [
-        'background/icon1.png',
-        'background/icon2.png',
-        'background/icon3.png',
-        'background/icon4.png',
-        'background/icon5.png',
-        'background/icon6.png',
-        'background/icon7.png',
-        'background/icon8.png',
-        'background/icon9.png',
-        'background/icon10.png',
-        'background/icon11.png',
-        'background/icon12.png'
-    ];
+    if (backgroundContainer) {
+        const iconPaths = [
+            'background/icon1.png',
+            'background/icon2.png',
+            'background/icon3.png',
+            'background/icon4.png',
+            'background/icon5.png',
+            'background/icon6.png',
+            'background/icon7.png',
+            'background/icon8.png',
+            'background/icon9.png',
+            'background/icon10.png',
+            'background/icon11.png',
+            'background/icon12.png'
+        ];
 
-    const numberOfIcons = 20;
+        const numberOfIcons = 20;
 
-    for (let i = 0; i < numberOfIcons; i++) {
-        const img = document.createElement('img');
-        img.src = iconPaths[Math.floor(Math.random() * iconPaths.length)];
-        img.style.position = 'absolute';
-        img.style.top = Math.random() * 100 + '%';
-        img.style.left = Math.random() * 100 + '%';
-        img.style.width = Math.random() * 35 + 15 + 'px';
-        img.style.height = 'auto';
-        img.style.animation = 'float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate';
-        backgroundContainer.appendChild(img);
+        for (let i = 0; i < numberOfIcons; i++) {
+            const img = document.createElement('img');
+            img.src = iconPaths[Math.floor(Math.random() * iconPaths.length)];
+            img.style.position = 'absolute';
+            img.style.top = Math.random() * 100 + '%';
+            img.style.left = Math.random() * 100 + '%';
+            img.style.width = Math.random() * 35 + 15 + 'px';
+            img.style.height = 'auto';
+            img.classList.add('animated-icon');
+            backgroundContainer.appendChild(img);
+        }
     }
 });
 

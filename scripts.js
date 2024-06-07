@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+																
     const contactActionContainer = document.getElementById('contact-actions');
 
     document.getElementById('contact-action').addEventListener('click', () => {
-        contactActionContainer.style.display = 'block'; // Show options
+        contactActionContainer.style.display = 'flex'; // Show options
     });
 
     document.getElementById('call').addEventListener('click', () => {
         window.location.href = "tel:+85512716369";
+	        makeCall();
         contactActionContainer.style.display = 'none'; // Hide options after selection
     });
 
-    document.getElementById('save-contact').addEventListener('click', saveContact);
+    document.getElementById('save-contact').addEventListener('click', () => {
+        saveContact();
+        contactActionContainer.style.display = 'none'; // Hide options after selection
+    });
+
     document.getElementById('cancel-contact').addEventListener('click', () => {
         contactActionContainer.style.display = 'none'; // Hide options
     });
@@ -38,9 +44,12 @@ END:VCARD`;
     document.body.removeChild(a);
 
     window.URL.revokeObjectURL(url);
-    contactActionContainer.style.display = 'none'; // Hide options
+
 }
 
+function makeCall() {
+    window.location.href = "tel:+85512716369";
+}
 
 // Dark Mode Toggle
 document.getElementById('toggle-dark-mode').addEventListener('change', (event) => {
@@ -61,7 +70,7 @@ function openFacebookLink() {
         window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // Attempt to open Facebook app on iOS devices
-        window.open('fb://profile/' + encodeURIComponent(fbURL));
+        window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
     } else {
         // Default to opening in a new tab for desktops and others
         window.open(fbURL, '_blank');

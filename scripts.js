@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < numberOfIcons; i++) {
         const img = document.createElement('img');
-        img.src = iconPaths[Math.floor(Math.random() * iconPaths.length)];
-        img.style.position = 'absolute';
+        const randomIcon = iconPaths[Math.floor(Math.random() * iconPaths.length)];
+        img.src = randomIcon;
         img.style.top = Math.random() * 100 + '%';
         img.style.left = Math.random() * 100 + '%';
-        img.style.width = Math.random() * 35 + 15 + 'px';
+        img.style.width = Math.random() * 35 + 15 + 'px'; // Random width between 35px and 50px
         img.style.height = 'auto';
-        img.style.animation = 'float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate';
+        iimg.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Random duration between 5s and 10s
         backgroundContainer.appendChild(img);
     }
 });

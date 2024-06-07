@@ -154,8 +154,9 @@ body.dark-mode .social-buttons .social-icon:hover {
     background-color: transparent;
 }
 
+/*Bouncing Background */
 .background-icons {
-
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -165,19 +166,40 @@ body.dark-mode .social-buttons .social-icon:hover {
 }
 
 .background-icons img {
-    position: absolute;
     opacity: 0.1;
-    animation: bounce 10s infinite alternate;
+    animation: float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate;
 }
 
-@keyframes bounce {
+@keyframes float {
     0% {
-        transform: translateY(0) translateX(0);
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
     }
     100% {
-        transform: translateY(-50px) translateX(50px);
+        transform: translateY(0);
     }
 }
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
 
 /* Toggle Button Slider */
 .switch {

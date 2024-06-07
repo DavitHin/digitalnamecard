@@ -165,7 +165,7 @@ body.dark-mode .social-buttons .social-icon:hover {
     overflow: hidden;
 }
 
-.background-icons img {
+.animated-icon {
     opacity: 0.1;
     animation: float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate;
 }
@@ -199,6 +199,7 @@ body.dark-mode .social-buttons .social-icon:hover {
         transform: scale(1.2);
     }
 }
+
 
 
 /* Toggle Button Slider */

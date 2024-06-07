@@ -35,10 +35,18 @@ body.dark-mode {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .contact-button:hover {
     background-color: #004d40;
+}
+
+#contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 

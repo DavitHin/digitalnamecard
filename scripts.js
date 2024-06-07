@@ -1,4 +1,21 @@
-// Function to save contact details
+document.addEventListener('DOMContentLoaded', function() {
+    const contactActionContainer = document.getElementById('contact-actions');
+
+    document.getElementById('contact-action').addEventListener('click', () => {
+        contactActionContainer.style.display = 'block'; // Show options
+    });
+
+    document.getElementById('call').addEventListener('click', () => {
+        window.location.href = "tel:+85512716369";
+        contactActionContainer.style.display = 'none'; // Hide options after selection
+    });
+
+    document.getElementById('save-contact').addEventListener('click', saveContact);
+    document.getElementById('cancel-contact').addEventListener('click', () => {
+        contactActionContainer.style.display = 'none'; // Hide options
+    });
+});
+
 function saveContact() {
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
@@ -21,32 +38,9 @@ END:VCARD`;
     document.body.removeChild(a);
 
     window.URL.revokeObjectURL(url);
+    contactActionContainer.style.display = 'none'; // Hide options
 }
 
-// Function to initiate a phone call
-function makeCall() {
-    window.location.href = "tel:+85512716369";
-}
-
-// Function to present options for contact interaction
-function contactOptions() {
-    const choice = prompt("Choose an action: (1) Save Contact, (2) Make Call, (3) Cancel");
-
-    switch(choice) {
-        case "1":
-            saveContact();
-            break;
-        case "2":
-            makeCall();
-            break;
-        case "3":
-        default:
-            console.log("No action taken.");
-            break;
-    }
-}
-
-document.getElementById('contact-action').addEventListener('click', contactOptions);
 
 // Dark Mode Toggle
 document.getElementById('toggle-dark-mode').addEventListener('change', (event) => {
@@ -59,15 +53,15 @@ document.getElementById('toggle-dark-mode').addEventListener('change', (event) =
 
 // Function to handle Facebook link interaction based on device type
 function openFacebookLink() {
-    const fbURL = "https://web.facebook.com/mr.sela369/";
+    const fbURL = "https://facebook.com/mr.sela369/";
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(userAgent)) {
         // Attempt to open Facebook app on Android devices
         window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
-    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // Attempt to open Facebook app on iOS devices
-        window.open('https://web.facebook.com/mr.sela369/' + encodeURIComponent(fbURL), '_blank');
+        window.open('fb://profile/' + encodeURIComponent(fbURL));
     } else {
         // Default to opening in a new tab for desktops and others
         window.open(fbURL, '_blank');

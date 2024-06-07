@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'background/icon12.png'
     ];
 
-    const numberOfIcons = 20;
+    const numberOfIcons = 24;
 
     for (let i = 0; i < numberOfIcons; i++) {
         const img = document.createElement('img');
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.left = Math.random() * 100 + '%';
         img.style.width = Math.random() * 35 + 15 + 'px';
         img.style.height = 'auto';
-        img.style.animation = 'bounce 10s infinite alternate';
+        img.style.animation = 'float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate';
         backgroundContainer.appendChild(img);
     }
 });

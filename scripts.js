@@ -67,7 +67,7 @@ function openFacebookLink() {
         window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
     } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // Attempt to open Facebook app on iOS devices
-        window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
+        window.open('https://web.facebook.com/mr.sela369/' + encodeURIComponent(fbURL), '_blank');
     } else {
         // Default to opening in a new tab for desktops and others
         window.open(fbURL, '_blank');

@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('call').addEventListener('click', () => {
-        window.location.href = "tel:+85512716369";
-	        makeCall();
+        makeCall();
         contactActionContainer.style.display = 'none'; // Hide options after selection
     });
 
@@ -68,7 +67,7 @@ function openFacebookLink() {
     if (/android/i.test(userAgent)) {
         // Attempt to open Facebook app on Android devices
         window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // Attempt to open Facebook app on iOS devices
         window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
     } else {

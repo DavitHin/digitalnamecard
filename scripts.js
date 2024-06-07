@@ -65,41 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Function to detect the user's device and OS
-function detectDeviceAndOS() {
+// Detect device and open Facebook link accordingly
+function openFacebookLink(url) {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    
-    // Detect iOS
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return 'iOS';
-    }
-    // Detect Android
+
     if (/android/i.test(userAgent)) {
-        return 'Android';
-    }
-    // Default to desktop
-    return 'Desktop';
-}
-
-// Function to open the appropriate Facebook link
-function openFacebookLink() {
-    const device = detectDeviceAndOS();
-    let facebookLink;
-
-    if (device === 'iOS') {
-        facebookLink = 'fb://profile/yourProfileID'; // Replace with your Facebook profile ID or URL for iOS
-    } else if (device === 'Android') {
-        facebookLink = 'fb://facewebmodal/f?href=https://www.facebook.com/yourProfileID'; // Replace with your Facebook profile ID or URL for Android
+        window.location.href = 'fb://facewebmodal/f?href=' + encodeURIComponent(url);
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = 'fb://profile?id=' + extractFacebookId(url);
     } else {
-        facebookLink = 'https://www.facebook.com/yourProfileID'; // Replace with your Facebook profile URL for desktop
+        window.location.href = url;
     }
-
-    window.location.href = facebookLink;
 }
 
-// Add event listener to your link
-document.getElementById('facebook-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    openFacebookLink(); // Open the appropriate link based on the device
-});
-
+function extractFacebookId(url) {
+    const match = url.match(/facebook\.com\/(?:profile\.php\?id=)?([^\/?&]+)/);
+    return match ? match[1] : url;
+}

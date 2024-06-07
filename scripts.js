@@ -1,85 +1,66 @@
 document.addEventListener('DOMContentLoaded', function() {
-																
+    // Setting up event listeners for the contact action buttons
     const contactActionContainer = document.getElementById('contact-actions');
 
-    document.getElementById('contact-action').addEventListener('click', () => {
-        contactActionContainer.style.display = 'flex'; // Show options
-    });
-
-    document.getElementById('call').addEventListener('click', () => {
-        makeCall();
-        contactActionContainer.style.display = 'none'; // Hide options after selection
-    });
-
-    document.getElementById('save-contact').addEventListener('click', () => {
-        saveContact();
-        contactActionContainer.style.display = 'none'; // Hide options after selection
-    });
-
-    document.getElementById('cancel-contact').addEventListener('click', () => {
-        contactActionContainer.style.display = 'none'; // Hide options
-    });
-});
-
-function saveContact() {
-    const vCardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Sela HIN Mr.
-ORG:General Department of Taxation
-TITLE:Network Engineer
-EMAIL:hinsela@tax.gov.kh
-TEL;TYPE=Cellcard,VOICE:+85512716369
-URL:https://www.tax.gov.kh/en
-END:VCARD`;
-
-    const blob = new Blob([vCardData], { type: 'text/vcard' });
-    const url = window.URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'contact.vcf';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    window.URL.revokeObjectURL(url);
-
-}
-
-function makeCall() {
-    window.location.href = "tel:+85512716369";
-}
-
-// Dark Mode Toggle
-document.getElementById('toggle-dark-mode').addEventListener('change', (event) => {
-    if (event.target.checked) {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
+    if (document.getElementById('contact-action')) {
+        document.getElementById('contact-action').addEventListener('click', () => {
+            contactActionContainer.style.display = 'flex'; // Show options
+        });
     }
-});
 
-// Function to handle Facebook link interaction based on device type
-function openFacebookLink() {
-    const fbURL = "https://facebook.com/mr.sela369/";
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-    if (/android/i.test(userAgent)) {
-        // Attempt to open Facebook app on Android devices
-        window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
-    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // Attempt to open Facebook app on iOS devices
-        window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
-    } else {
-        // Default to opening in a new tab for desktops and others
-        window.open(fbURL, '_blank');
+    if (document.getElementById('call')) {
+        document.getElementById('call').addEventListener('click', () => {
+            makeCall();
+            contactActionContainer.style.display = 'none'; // Hide options after selection
+        });
     }
-}
 
-document.querySelector('.social-icon.facebook').addEventListener('click', openFacebookLink);
+    if (document.getElementById('save-contact')) {
+        document.getElementById('save-contact').addEventListener('click', () => {
+            saveContact();
+            contactActionContainer.style.display = 'none'; // Hide options after selection
+        });
+    }
 
-// Code for adding floating background icons
-document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('cancel-contact')) {
+        document.getElementById('cancel-contact').addEventListener('click', () => {
+            contactActionContainer.style.display = 'none'; // Hide options
+        });
+    }
+
+    // Dark Mode Toggle
+    if (document.getElementById('toggle-dark-mode')) {
+        document.getElementById('toggle-dark-mode').addEventListener('change', (event) => {
+            if (event.target.checked) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    }
+
+    // Function to handle Facebook link interaction based on device type
+    function openFacebookLink() {
+        const fbURL = "https://facebook.com/mr.sela369/";
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+            // Attempt to open Facebook app on Android devices
+            window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Attempt to open Facebook app on iOS devices
+            window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
+        } else {
+            // Default to opening in a new tab for desktops and others
+            window.open(fbURL, '_blank');
+        }
+    }
+
+    if (document.querySelector('.social-icon.facebook')) {
+        document.querySelector('.social-icon.facebook').addEventListener('click', openFacebookLink);
+    }
+
+    // Code for adding floating background icons
     const backgroundContainer = document.querySelector('.background-icons');
     const iconPaths = [
         'background/icon1.png',
@@ -110,3 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundContainer.appendChild(img);
     }
 });
+
+function saveContact() {
+    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Sela HIN Mr.
+ORG:General Department of Taxation
+TITLE:Network Engineer
+EMAIL:hinsela@tax.gov.kh
+TEL;TYPE=Cellcard,VOICE:+85512716369
+URL:https://www.tax.gov.kh/en
+END:VCARD`;
+
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contact.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    window.URL.revokeObjectURL(url);
+}
+
+function makeCall() {
+    window.location.href = "tel:+85512716369";
+}

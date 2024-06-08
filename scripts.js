@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (slides.length > 0) {
             nextSlide();
         }
-    }, 3000); // Auto slide every 3 seconds
+    }, 5000); // Auto slide every 3 seconds
 
     // Optionally, add manual controls here if needed
 });

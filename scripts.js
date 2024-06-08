@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('contact-action').addEventListener('click', () => {
             contactActionContainer.style.display = 'flex'; // Show options
         });
+
+        document.getElementById('contact-action').addEventListener('dblclick', () => {
+            contactActionContainer.style.display = 'none'; // Hide options on double-click
+        });
     }
 
     if (document.getElementById('call')) {
@@ -19,12 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('save-contact').addEventListener('click', () => {
             saveContact();
             contactActionContainer.style.display = 'none'; // Hide options after selection
-        });
-    }
-
-    if (document.getElementById('cancel-contact')) {
-        document.getElementById('cancel-contact').addEventListener('click', () => {
-            contactActionContainer.style.display = 'none'; // Hide options
         });
     }
 
@@ -60,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.social-icon.facebook').addEventListener('click', openFacebookLink);
     }
 
-    // Code for adding floating background icons within the body
+    // Code for adding floating background icons
     const backgroundContainer = document.querySelector('.background-icons');
     const cardBackgroundContainer = document.querySelector('.card-background-icons');
     const iconPaths = [
@@ -75,7 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
         'background/icon9.png',
         'background/icon10.png',
         'background/icon11.png',
-        'background/icon12.png'
+        'background/icon12.png',
+        'background/icon13.png',
+        'background/icon14.png',
+        'background/icon15.png',
+        'background/icon16.png'
     ];
 
     const numberOfIcons = 25;
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.left = Math.random() * 100 + '%';
             img.style.width = Math.random() * 35 + 15 + 'px';
             img.style.height = 'auto';
-            img.style.animation = 'float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate, bounce 5s infinite linear';
+            img.classList.add('animated-icon');
             container.appendChild(img);
         }
     }
@@ -153,41 +155,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 5000); // Auto slide every 5 seconds
 
-    // Pause on click
-    profileSlider.addEventListener('click', () => {
+    // Manual slide buttons
+    document.getElementById('slide-left').addEventListener('click', () => {
         clearInterval(slideInterval);
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+        slideInterval = setInterval(() => {
+            updateSlides();
+            if (slides.length > 0) {
+                nextSlide();
+            }
+        }, 5000); // Restart auto-slide
     });
 
-    // Move to next slide on double click
-    profileSlider.addEventListener('dblclick', () => {
+    document.getElementById('slide-right').addEventListener('click', () => {
+        clearInterval(slideInterval);
         nextSlide();
+        slideInterval = setInterval(() => {
+            updateSlides();
+            if (slides.length > 0) {
+                nextSlide();
+            }
+        }, 5000); // Restart auto-slide
     });
-
-    // Resume auto-slide on clicking outside the profile slider
-    document.addEventListener('click', (event) => {
-        if (!profileSlider.contains(event.target)) {
-            slideInterval = setInterval(() => {
-                updateSlides();
-                if (slides.length > 0) {
-                    nextSlide();
-                }
-            }, 3000);
-        }
-    });
-
-    // Manual slide buttons (optional)
-    // document.getElementById('slide-left').addEventListener('click', () => {
-    //     clearInterval(slideInterval);
-    //     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    //     showSlide(currentSlide);
-    // });
-
-    // document.getElementById('slide-right').addEventListener('click', () => {
-    //     clearInterval(slideInterval);
-    //     nextSlide();
-    // });
-
-    // Existing code...
 });
 
 // Functions for saving contact and making a call

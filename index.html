@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Name Card</title>
+    <!-- Link to the external CSS stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-	
-
 <body class="dark-mode">
+    <!-- Container for background icons -->
+    <div class="background-icons"></div>
+
+    <!-- Main card container -->
     <div class="card">
+        
+        <!-- Dark mode toggle switch -->
         <label class="switch">
             <input type="checkbox" id="toggle-dark-mode" checked>
             <span class="slider round"></span>
         </label>
-	    <div class="background-icons"></div>
+        
+        <!-- Profile image -->
         <img src="img/profile.jpg" alt="Your Photo">
+        
+        <!-- Name and title -->
         <h1>Sela HIN Mr.</h1>
         <p>General Department of Taxation</p>
         <p>Network Engineer</p>
+        
+        <!-- Contact button to show contact options -->
         <button id="contact-action" class="contact-button">Contact Options</button>
+        
+        <!-- Contact options (initially hidden) -->
         <div id="contact-actions" style="display: none;">
             <button id="call" class="contact-button">Call</button>
             <button id="save-contact" class="contact-button">Save Contact</button>
             <button id="cancel-contact" class="contact-button">Cancel</button>
         </div>
-	    
+        
+        <!-- Social media buttons -->
         <div class="social-buttons">
-	   <a href="mailto:hinsela@tax.gov.kh" class="social-icon email"  target="_blank">
+            <a href="mailto:hinsela@tax.gov.kh" class="social-icon email" target="_blank">
                 <img src="icon/email-icon.png" alt="Contact">
             </a>
             <a href="https://t.me/selahin369" class="social-icon telegram" target="_blank">
@@ -36,11 +49,13 @@
             <a href="javascript:void(0)" class="social-icon facebook" onclick="openFacebookLink('https://www.facebook.com/mr.sela369/')">
                 <img src="icon/facebook-icon.png" alt="Facebook">
             </a>
-			<a href="https://www.tax.gov.kh/en" class="social-icon facebook" target="_blank">
+            <a href="https://www.tax.gov.kh/en" class="social-icon website" target="_blank">
                 <img src="icon/website-icon.jpg" alt="Website">
             </a>
         </div>
     </div>
+    
+    <!-- Link to the external JavaScript file -->
     <script src="scripts.js"></script>
 </body>
 </html>

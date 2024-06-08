@@ -146,52 +146,36 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
     }
 
-    setInterval(() => {
+    let slideInterval = setInterval(() => {
         updateSlides();
         if (slides.length > 0) {
             nextSlide();
         }
-    }, 5000); // Auto slide every 5 seconds
+    }, 3000); // Auto slide every 3 seconds
 
-    // Optionally, add manual controls here if needed pasuse on hover
-    // Pause on hover
-    profileSlider.addEventListener('mouseover', () => {
+    // Pause on click
+    profileSlider.addEventListener('click', () => {
         clearInterval(slideInterval);
     });
 
-    profileSlider.addEventListener('mouseout', () => {
-        slideInterval = setInterval(() => {
-            updateSlides();
-            if (slides.length > 0) {
-                nextSlide();
-            }
-        }, 3000);
+    // Move to next slide on double click
+    profileSlider.addEventListener('dblclick', () => {
+        nextSlide();
     });
 
-    // Manual slide
-    let startX, endX;
-    profileSlider.addEventListener('touchstart', (event) => {
-        startX = event.touches[0].clientX;
-    });
+    // Manual slide buttons (optional)
+    // document.getElementById('slide-left').addEventListener('click', () => {
+    //     clearInterval(slideInterval);
+    //     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    //     showSlide(currentSlide);
+    // });
 
-    profileSlider.addEventListener('touchmove', (event) => {
-        endX = event.touches[0].clientX;
-    });
+    // document.getElementById('slide-right').addEventListener('click', () => {
+    //     clearInterval(slideInterval);
+    //     nextSlide();
+    // });
 
-    profileSlider.addEventListener('touchend', () => {
-        if (startX && endX) {
-            if (startX > endX + 50) {
-                // Slide left
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            } else if (startX < endX - 50) {
-                // Slide right
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            }
-        }
-        startX = endX = null; // Reset values
-    });	   
+    // Existing code...
 });
 
 // Functions for saving contact and making a call

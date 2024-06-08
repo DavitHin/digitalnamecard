@@ -163,6 +163,18 @@ document.addEventListener('DOMContentLoaded', function() {
         nextSlide();
     });
 
+    // Resume auto-slide on clicking outside the profile slider
+    document.addEventListener('click', (event) => {
+        if (!profileSlider.contains(event.target)) {
+            slideInterval = setInterval(() => {
+                updateSlides();
+                if (slides.length > 0) {
+                    nextSlide();
+                }
+            }, 3000);
+        }
+    });
+
     // Manual slide buttons (optional)
     // document.getElementById('slide-left').addEventListener('click', () => {
     //     clearInterval(slideInterval);

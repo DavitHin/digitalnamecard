@@ -49,7 +49,6 @@ body.dark-mode {
     margin-top: 10px;
 }
 
-
 .card:hover {
     transform: translateY(-10px);
 }
@@ -154,8 +153,9 @@ body.dark-mode .social-buttons .social-icon:hover {
     background-color: transparent;
 }
 
-/*Bouncing Background */
+/* Bouncing Background */
 .background-icons {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -164,13 +164,49 @@ body.dark-mode .social-buttons .social-icon:hover {
     overflow: hidden;
 }
 
-.animated-icon {
+.background-icons img {
     opacity: 0.1;
-    animation: float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate;
+    animation: float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate, bounce 5s infinite linear;
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+}
 
 /* Toggle Button Slider */
 .switch {

@@ -11,3 +11,7 @@ Digital Namecard, you can have this code and use as your benifit.
     ];
 
     const numberOfIcons = **25**;
+4. Default to Dark Mode because I like it, but there a toggle to change to Normal Mode
+
+5. Add multiple phone numbers -soon
+6. General QR in page -soon

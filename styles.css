@@ -120,10 +120,12 @@ body.dark-mode {
     font-size: 28px;
     background: linear-gradient(90deg, #ff0066, #ffcc00, #33cc33, #0066ff);
     background-size: 400%;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; /* Vendor-prefixed version for WebKit browsers */
+    background-clip: text; /* Standard property */
     color: transparent;
-    animation: colorShift 5s linear infinite;
+    animation: colorShift 20s linear infinite;
 }
+
 
 @keyframes colorShift {
     0% {

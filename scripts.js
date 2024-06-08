@@ -151,9 +151,47 @@ document.addEventListener('DOMContentLoaded', function() {
         if (slides.length > 0) {
             nextSlide();
         }
-    }, 5000); // Auto slide every 3 seconds
+    }, 5000); // Auto slide every 5 seconds
 
-    // Optionally, add manual controls here if needed
+    // Optionally, add manual controls here if needed pasuse on hover
+    // Pause on hover
+    profileSlider.addEventListener('mouseover', () => {
+        clearInterval(slideInterval);
+    });
+
+    profileSlider.addEventListener('mouseout', () => {
+        slideInterval = setInterval(() => {
+            updateSlides();
+            if (slides.length > 0) {
+                nextSlide();
+            }
+        }, 3000);
+    });
+
+    // Manual slide
+    let startX, endX;
+    profileSlider.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+    });
+
+    profileSlider.addEventListener('touchmove', (event) => {
+        endX = event.touches[0].clientX;
+    });
+
+    profileSlider.addEventListener('touchend', () => {
+        if (startX && endX) {
+            if (startX > endX + 50) {
+                // Slide left
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            } else if (startX < endX - 50) {
+                // Slide right
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+        }
+        startX = endX = null; // Reset values
+    });	   
 });
 
 // Functions for saving contact and making a call

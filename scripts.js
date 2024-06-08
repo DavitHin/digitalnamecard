@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.left = Math.random() * 100 + '%';
         img.style.width = Math.random() * 35 + 15 + 'px'; // Random width between 35px and 50px
         img.style.height = 'auto';
-        iimg.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Random duration between 5s and 10s
+        img.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Random duration between 5s and 10s
         backgroundContainer.appendChild(img);
     }
     }

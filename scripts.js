@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (slides.length > 0) {
             nextSlide();
         }
-    }, 3000); // Auto slide every 3 seconds
+    }, 5000); // Auto slide every 5 seconds
 
     // Pause on click
     profileSlider.addEventListener('click', () => {

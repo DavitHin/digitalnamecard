@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
-    <!-- Container for background icons -->
+    <!-- Container for background icons on the body -->
     <div class="background-icons"></div>
 
     <!-- Main card container -->
     <div class="card">
-        
+        <!-- Container for background icons within the card -->
+        <div class="card-background-icons"></div>
+
         <!-- Dark mode toggle switch -->
         <label class="switch">
             <input type="checkbox" id="toggle-dark-mode" checked>
             <span class="slider round"></span>
         </label>
         
-        <!-- Profile image -->
-        <img src="img/profile.jpg" alt="Your Photo">
+        <!-- Profile image slider -->
+        <div class="profile-slider" id="profile-slider"></div>
         
         <!-- Name and title -->
         <h1>Sela HIN Mr.</h1>
@@ -45,6 +47,9 @@
             </a>
             <a href="https://t.me/selahin369" class="social-icon telegram" target="_blank">
                 <img src="icon/telegram-icon.png" alt="Telegram">
+            </a>
+            <a href="https://wa.me/qr/GLSSHI6UM56WJ1" class="social-icon whatsapp" target="_blank">
+                <img src="icon/whatsapp-icon.png" alt="WhatsApp">
             </a>
             <a href="javascript:void(0)" class="social-icon facebook" onclick="openFacebookLink('https://www.facebook.com/mr.sela369/')">
                 <img src="icon/facebook-icon.png" alt="Facebook">

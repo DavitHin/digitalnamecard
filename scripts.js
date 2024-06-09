@@ -37,6 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+
+//Function Flip Over QR
+        const qrIcon = document.getElementById('qr-icon');
+        const backToMain = document.getElementById('back-to-main');
+        const body = document.body;
+    
+        qrIcon.addEventListener('click', (event) => {
+            event.preventDefault();
+            body.classList.add('flip');
+            setTimeout(() => {
+                document.getElementById('main-card').style.display = 'none';
+                document.getElementById('qr-card').style.display = 'block';
+            }, 600); // Match the duration of the CSS transition
+        });
+    
+        backToMain.addEventListener('click', (event) => {
+            event.preventDefault();
+            body.classList.remove('flip');
+            setTimeout(() => {
+                document.getElementById('qr-card').style.display = 'none';
+                document.getElementById('main-card').style.display = 'block';
+            }, 600); // Match the duration of the CSS transition
+        });
+
+
+
+
+
+
     // Function to handle Facebook link interaction based on device type
     function openFacebookLink() {
         const fbURL = "https://facebook.com/mr.sela369/";

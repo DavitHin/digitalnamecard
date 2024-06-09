@@ -9,7 +9,7 @@
 <body class="dark-mode">
     <div class="background-icons"></div>
 
-    <div class="card">
+    <div class="card" id="main-card">
         <div class="card-background-icons"></div>
 
         <label class="switch">
@@ -31,7 +31,6 @@
             Contact Options
         </button>
         
-        
         <div id="contact-actions" style="display: none;">
             <button id="call" class="contact-button">Call</button>
             <button id="save-contact" class="contact-button">Save Contact</button>
@@ -50,10 +49,27 @@
             <a href="https://www.linkedin.com/in/selahin/" class="social-icon LinkedIn" target="_blank">
                 <img src="icon/linkedin-icon.png" alt="LinkedIn">
             </a>
-            <a href="https://www.tax.gov.kh/en" class="social-icon website" target="_blank">
-                <img src="icon/website-icon.png" alt="Website">
+            <a href="#" id="qr-icon" class="social-icon qr">
+                <img src="icon/qr-icon.png" alt="QR Code">
             </a>
         </div>
+    </div>
+
+    <div id="qr-card" class="card" style="display: none;">
+        <div class="card-background-icons"></div>
+
+        <label class="switch">
+            <input type="checkbox" id="toggle-dark-mode-qr" checked>
+            <span class="slider round"></span>
+        </label>
+
+        <div class="qr-image-container">
+            <img src="qr/qrcode.png" alt="QR Code">
+        </div>
+
+        <button id="back-to-main" class="contact-button">
+            Ruturn
+        </button>
     </div>
 
     <script src="scripts.js"></script>

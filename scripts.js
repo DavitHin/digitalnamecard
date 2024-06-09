@@ -37,56 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    //Function Flip Over QR
+    const qrIcon = document.getElementById('qr-icon');
+    const backToMain = document.getElementById('back-to-main');
+    const body = document.body;
 
+    qrIcon.addEventListener('click', (event) => {
+        event.preventDefault();
+        body.classList.add('flip');
+        setTimeout(() => {
+            document.getElementById('main-card').style.display = 'none';
+            document.getElementById('qr-card').style.display = 'block';
+        }, 600); // Match the duration of the CSS transition
+    });
 
-//Function Flip Over QR
-        const qrIcon = document.getElementById('qr-icon');
-        const backToMain = document.getElementById('back-to-main');
-        const body = document.body;
-    
-        qrIcon.addEventListener('click', (event) => {
-            event.preventDefault();
-            body.classList.add('flip');
-            setTimeout(() => {
-                document.getElementById('main-card').style.display = 'none';
-                document.getElementById('qr-card').style.display = 'block';
-            }, 600); // Match the duration of the CSS transition
-        });
-    
-        backToMain.addEventListener('click', (event) => {
-            event.preventDefault();
-            body.classList.remove('flip');
-            setTimeout(() => {
-                document.getElementById('qr-card').style.display = 'none';
-                document.getElementById('main-card').style.display = 'block';
-            }, 600); // Match the duration of the CSS transition
-        });
-
-
-
-
-
-
-    // Function to handle Facebook link interaction based on device type
-    function openFacebookLink() {
-        const fbURL = "https://facebook.com/mr.sela369/";
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-        if (/android/i.test(userAgent)) {
-            // Attempt to open Facebook app on Android devices
-            window.open('fb://facewebmodal/f?href=' + encodeURIComponent(fbURL), '_blank');
-        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            // Attempt to open Facebook app on iOS devices
-            window.open('fb://profile/' + encodeURIComponent(fbURL), '_blank');
-        } else {
-            // Default to opening in a new tab for desktops and others
-            window.open(fbURL, '_blank');
-        }
-    }
-
-    if (document.querySelector('.social-icon.facebook')) {
-        document.querySelector('.social-icon.facebook').addEventListener('click', openFacebookLink);
-    }
+    backToMain.addEventListener('click', (event) => {
+        event.preventDefault();
+        body.classList.remove('flip');
+        setTimeout(() => {
+            document.getElementById('qr-card').style.display = 'none';
+            document.getElementById('main-card').style.display = 'block';
+        }, 600); // Match the duration of the CSS transition
+    });
 
     // Code for adding floating background icons
     const backgroundContainer = document.querySelector('.background-icons');

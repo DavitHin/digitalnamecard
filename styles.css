@@ -196,7 +196,7 @@ body.dark-mode .card a:hover {
 }
 
 .social-buttons .social-icon:hover {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.5) rotate(20deg);
     background-color: transparent;
 }
 
@@ -207,6 +207,89 @@ body.dark-mode .social-buttons .social-icon {
 body.dark-mode .social-buttons .social-icon:hover {
     background-color: transparent;
 }
+
+
+/*QR Code */
+
+.qr-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.qr-image-container img {
+    width: 250px;
+    height: 250px;
+}
+
+
+.social-buttons .social-icon.qr {
+    position: absolute;
+    top: 10px; /* Adjust this value to position the icon vertically */
+    right: 10px; /* Adjust this value to position the icon horizontally */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.card {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+#main-card {
+    transform: rotateY(0deg);
+}
+
+#qr-card {
+    transform: rotateY(180deg);
+}
+
+body.flip #main-card {
+    transform: rotateY(-180deg);
+}
+
+body.flip #qr-card {
+    transform: rotateY(0deg);
+}
+
+/* Additional styles for the QR code page */
+.qr-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.qr-image-container img {
+    width: 250px;
+    height: 250px;
+}
+
+.social-buttons .social-icon.qr {
+    position: absolute;
+    top: 15px; /* Adjust this value to position the icon vertically */
+    right: -13px; /* Adjust this value to position the icon horizontally */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
 
 /* Bouncing Background for body */
 .background-icons {

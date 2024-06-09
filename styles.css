@@ -208,8 +208,8 @@ body.dark-mode .social-buttons .social-icon:hover {
     background-color: transparent;
 }
 
-/*QR Card Background Animatin */
-.card-background-icons img {
+/*QR Card Background Animation */
+.background-icons img {
     opacity: 0.1;
     animation: float 10s infinite alternate, rotate 20s linear infinite, scale 10s ease-in-out infinite alternate, bounce 5s infinite linear;
 }

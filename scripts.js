@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    //Function Flip Over QR
+    // Function Flip Over QR
     const qrIcon = document.getElementById('qr-icon');
     const backToMain = document.getElementById('back-to-main');
     const body = document.body;
@@ -61,8 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Code for adding floating background icons
-    const backgroundContainer = document.querySelector('.background-icons');
-    const cardBackgroundContainer = document.querySelector('.card-background-icons');
+    const backgroundContainers = document.querySelectorAll('.background-icons');
     const iconPaths = [
         'background/icon1.png',
         'background/icon2.png',
@@ -98,8 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    createIcons(backgroundContainer);
-    createIcons(cardBackgroundContainer);
+    backgroundContainers.forEach(container => createIcons(container));
 
     // Profile image slider
     const profileSlider = document.getElementById('profile-slider');

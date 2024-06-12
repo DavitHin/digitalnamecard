@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileSlider = document.getElementById('profile-slider');
 
     const imageFiles = [
-        '../img/u2/profile1.jpg',
-        '../img/u2/profile2.jpg',
-        '../img/u2/profile3.jpg',
-        '../img/u2/profile4.jpg',
-        '../img/u2/profile5.jpg'
+        '../img/u3/profile1.jpg',
+        '../img/u3/profile2.jpg',
+        '../img/u3/profile3.jpg',
+        '../img/u3/profile4.jpg',
+        '../img/u3/profile5.jpg'
     ];
 
     function checkImageExists(url, callback) {
@@ -188,11 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function saveContact() {
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Mom SEAN Mr.
+FN:Leangkruy CHHUN Mr.
 ORG:General Department of Taxation
-TITLE:Network Engineer
-EMAIL:seanmom@tax.gov.kh
-TEL;TYPE=Smart,VOICE:+855963027019
+TITLE:Network Opeartion CenterEngineer
+EMAIL:chhunleangkruy@tax.gov.kh
+TEL;TYPE=Cellcard,VOICE:++85589535676
 URL:https://www.tax.gov.kh/en
 END:VCARD`;
 
@@ -210,5 +210,5 @@ END:VCARD`;
 }
 
 function makeCall() {
-    window.location.href = "tel:+855963027019";
+    window.location.href = "tel:+85589535676";
 }

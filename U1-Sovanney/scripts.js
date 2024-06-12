@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileSlider = document.getElementById('profile-slider');
 
     const imageFiles = [
-        '../img/profile1.jpg',
-        '../img/profile2.jpg',
-        '../img/profile3.jpg',
-        '../img/profile4.jpg',
-        '../img/profile5.jpg'
+        '../img/u1/profile1.jpg',
+        '../img/u1/profile2.jpg',
+        '../img/u1/profile3.jpg',
+        '../img/u1/profile4.jpg',
+        '../img/u1/profile5.jpg'
     ];
 
     function checkImageExists(url, callback) {

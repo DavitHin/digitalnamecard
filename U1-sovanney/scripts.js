@@ -63,22 +63,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Code for adding floating background icons
     const backgroundContainers = document.querySelectorAll('.background-icons');
     const iconPaths = [
-        'background/icon1.png',
-        'background/icon2.png',
-        'background/icon3.png',
-        'background/icon4.png',
-        'background/icon5.png',
-        'background/icon6.png',
-        'background/icon7.png',
-        'background/icon8.png',
-        'background/icon9.png',
-        'background/icon10.png',
-        'background/icon11.png',
-        'background/icon12.png',
-        'background/icon13.png',
-        'background/icon14.png',
-        'background/icon15.png',
-        'background/icon16.png'
+        '../background/icon1.png',
+        '../background/icon2.png',
+        '../background/icon3.png',
+        '../background/icon4.png',
+        '../background/icon5.png',
+        '../background/icon6.png',
+        '../background/icon7.png',
+        '../background/icon8.png',
+        '../background/icon9.png',
+        '../background/icon10.png',
+        '../background/icon11.png',
+        '../background/icon12.png',
+        '../background/icon13.png',
+        '../background/icon14.png',
+        '../background/icon15.png',
+        '../background/icon16.png'
     ];
 
     const numberOfIcons = 25;
@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileSlider = document.getElementById('profile-slider');
 
     const imageFiles = [
-        'img/profile1.jpg',
-        'img/profile2.jpg',
-        'img/profile3.jpg',
-        'img/profile4.jpg',
-        'img/profile5.jpg'
+        '../img/profile1.jpg',
+        '../img/profile2.jpg',
+        '../img/profile3.jpg',
+        '../img/profile4.jpg',
+        '../img/profile5.jpg'
     ];
 
     function checkImageExists(url, callback) {
@@ -184,11 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function saveContact() {
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Sela HIN Mr.
+FN:Sovanney PHENG Mr.
 ORG:General Department of Taxation
 TITLE:Network Engineer
-EMAIL:hinsela@tax.gov.kh
-TEL;TYPE=Cellcard,VOICE:+85512716369
+EMAIL:sovanneypheng@tax.gov.kh
+TEL;TYPE=Cellcard,VOICE:+85512421288
 URL:https://www.tax.gov.kh/en
 END:VCARD`;
 
@@ -206,5 +206,5 @@ END:VCARD`;
 }
 
 function makeCall() {
-    window.location.href = "tel:+85512716369";
+    window.location.href = "tel:+85512421288";
 }

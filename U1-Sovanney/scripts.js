@@ -1,5 +1,5 @@
 function openFacebookLink(url) {
-    window.location.href = url;
+    window.open(url, '_blank');
 }
 
 document.addEventListener('DOMContentLoaded', function() {

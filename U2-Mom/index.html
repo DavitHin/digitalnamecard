@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Name Card</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="dark-mode">
+    <div class="background-icons"></div>
+
+    <div class="card" id="main-card">
+        <div class="background-icons"></div> <!-- Add this line for background icons -->
+
+        <label class="switch">
+            <input type="checkbox" id="toggle-dark-mode" checked>
+            <span class="slider round"></span>
+        </label>
+
+        <div class="profile-slider-container">
+            <button id="slide-left" class="slider-button left">&lt;</button>
+            <div class="profile-slider" id="profile-slider"></div>
+            <button id="slide-right" class="slider-button right">&gt;</button>
+        </div>
+
+        <h1>Mom SEAN Mr.</h1>
+        <p>General Department of Taxation</p>
+        <p>Network Engineer</p>
+
+        <button id="contact-action" class="contact-button">
+            Contact Options
+        </button>
+        
+        <div id="contact-actions" style="display: none;">
+            <button id="call" class="contact-button">Call</button>
+            <button id="save-contact" class="contact-button">Save Contact</button>
+        </div>
+
+        <div class="social-buttons">
+            <a href="mailto:seanmom@tax.gov.kh" class="social-icon email" target="_blank">
+                <img src="../icon/email-icon.png" alt="Contact">
+            </a>
+            <a href="https://t.me/mom_sean8" class="social-icon telegram" target="_blank">
+                <img src="../icon/telegram-icon.png" alt="Telegram">
+            </a>
+            <a href="javascript:void(0)" class="social-icon facebook" onclick="openFacebookLink('https://www.facebook.com/moom.sean/')">
+                <img src="../icon/facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/in/mom-sean-71699217a/" class="social-icon LinkedIn" target="_blank">
+                <img src="../icon/linkedin-icon.png" alt="LinkedIn">
+            </a>
+            <a href="#" id="qr-icon" class="social-icon qr">
+                <img src="../icon/qr-icon.png" alt="QR Code">
+            </a>
+        </div>
+    </div>
+
+    <div id="qr-card" class="card" style="display: none;">
+        <div class="background-icons"></div> <!-- Add this line for background icons -->
+        <div class="qr-image-container">
+            <img src="../qr/qrcode-u1.png" alt="QR Code">
+        </div>
+        <button id="back-to-main" class="contact-button">
+            Return
+        </button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

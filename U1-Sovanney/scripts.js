@@ -1,3 +1,7 @@
+function openFacebookLink(url) {
+    window.location.href = url;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Setting up event listeners for the contact action buttons
     const contactActionContainer = document.getElementById('contact-actions');

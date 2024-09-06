@@ -210,5 +210,5 @@ END:VCARD`;
 }
 
 function makeCall() {
-    window.location.href = "tel:+855963027019";
+    window.location.href = "tel:+855888882678";
 }
